@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class findSmallLarge {
@@ -13,17 +15,22 @@ public class findSmallLarge {
     }
 
     // Add to array while array.size() is less than or equal to limit. use limit as LCV
-    public int getNumbers(int limit) {
+    public void getNumbers(int limit) {
+
+        //System.out.println(limit);
         System.out.println("Please enter each number followed by the enter key: ");
         ArrayList<Integer> aList1 = new ArrayList<>();
 
-        do {
+        while(aList1.size() < limit) {
             int userNumbers = input.nextInt();
             aList1.add(userNumbers);
 
-            return userNumbers;
+
         }
-        while (aList1.size() <= limit);
+        int min = Collections.min(aList1);
+        int max = Collections.max(aList1);
+        System.out.println("The lowest number in the array is: " + min);
+        System.out.println("The highest number entered is: " + max);
     }
 }
 
